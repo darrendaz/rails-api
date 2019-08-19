@@ -10,7 +10,7 @@ class StrainsController < ApplicationController
   end
 
   def create
-    @strain = Strain.new(strain_params)
+    @strain = Strain.create(strain_params)
     render json: @strain
   end
 
