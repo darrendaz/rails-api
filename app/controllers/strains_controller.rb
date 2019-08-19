@@ -6,10 +6,12 @@ class StrainsController < ApplicationController
 
   def show
     @strain = Strain.find_by(id: params[:id])
+    render json: @strain
   end
 
   def create
     @strain = Strain.new(strain_params)
+    render json: @strain
   end
 
   private
