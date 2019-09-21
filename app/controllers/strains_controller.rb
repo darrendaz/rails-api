@@ -14,8 +14,14 @@ class StrainsController < ApplicationController
     render json: @strain
   end
 
+  def update
+    @strain = Strain.find(params[:id])
+    @strain.update(strain_params)
+    render json: @strain
+  end
+
   private
   def strain_params
-    params.require(:strain).permit(:name)
+    params.require(:strain).permit(:name, :likes)
   end
 end
